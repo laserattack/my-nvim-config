@@ -7,6 +7,12 @@
 vim.opt.clipboard = "unnamedplus"
 -- Относительные номера строк
 vim.opt.relativenumber = true
+-- Чтобы не было разбиения строки если она не помещается в ширину экрана
+vim.opt.wrap = false
+vim.wo.linebreak = true
+-- Оффест скролла чтобы не нужно было доходить до самого низа
+-- при скролле на стрелочки на клавиатуре
+vim.opt.scrolloff = 8
 -- Таб = 4 пробела
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
@@ -62,9 +68,9 @@ require("lazy").setup({
             -- alt+e - открыть/закрыть меню директорий
             vim.keymap.set("n", "<A-e>", ":NvimTreeToggle<CR>", { silent = true })
             -- alt+1 - уменьшить ширину меню директорий на 5 символов
-            vim.keymap.set("n", "<A-a>", ":NvimTreeResize -5<CR>", { silent = true })
+            vim.keymap.set("n", "<A-1>", ":NvimTreeResize -5<CR>", { silent = true })
             -- alt+2 - увеличить ширину меню директорий на 5 символов
-            vim.keymap.set("n", "<A-d>", ":NvimTreeResize +5<CR>", { silent = true })
+            vim.keymap.set("n", "<A-2>", ":NvimTreeResize +5<CR>", { silent = true })
         end
     },
     -- Цветовая тема
