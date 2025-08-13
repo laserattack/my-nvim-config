@@ -59,8 +59,12 @@ require("lazy").setup({
                     end
                 end,
             })
-            -- alt+e - открыть/закрыть меню дерево директорий
-            vim.keymap.set("n", "<A-e>", ":NvimTreeToggle<CR>", { silent = true }) 
+            -- alt+e - открыть/закрыть меню директорий
+            vim.keymap.set("n", "<A-e>", ":NvimTreeToggle<CR>", { silent = true })
+            -- alt+1 - уменьшить ширину меню директорий на 5 символов
+            vim.keymap.set("n", "<A-a>", ":NvimTreeResize -5<CR>", { silent = true })
+            -- alt+2 - увеличить ширину меню директорий на 5 символов
+            vim.keymap.set("n", "<A-d>", ":NvimTreeResize +5<CR>", { silent = true })
         end
     },
     -- Цветовая тема
