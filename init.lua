@@ -6,6 +6,7 @@
 -- Для нормального взамодействия с системным буфером
 vim.opt.clipboard = "unnamedplus"
 -- Относительные номера строк
+vim.opt.number = true
 vim.opt.relativenumber = true
 -- Чтобы не было разбиения строки если она не помещается в ширину экрана
 vim.opt.wrap = false
