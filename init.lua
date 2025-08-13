@@ -26,7 +26,8 @@ vim.keymap.set("n", "<A-w>", "<C-w>w", { silent = true })
 -- Tab/Shift-Tab для сдвига текста в визуальном режиме 
 vim.keymap.set("v", "<Tab>", ">gv", { noremap = true, silent = true })
 vim.keymap.set("v", "<S-Tab>", "<gv", { noremap = true, silent = true })
-
+-- alt+z - vim.opt.wrap = false/true
+vim.keymap.set('n', '<A-z>', function() vim.opt.wrap = not vim.opt.wrap:get() end, { silent = true })
 
 -- Настройки плагинов
 
