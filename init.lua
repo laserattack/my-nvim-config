@@ -6,7 +6,7 @@
 ---- https://github.com/nvim-tree/nvim-tree.lua - плагин для отображения дерева директорий
 ---- https://github.com/nvim-tree/nvim-web-devicons - плагин для красивых иконок в дереве директорий
 ---- https://github.com/rebelot/kanagawa.nvim - плагин для установки цветовой темы
-
+---- https://github.com/nvim-treesitter/nvim-treesitter - плагин для умной подстветки ЯП
 
 -- Комбинации клавиш
 --- Базовые
