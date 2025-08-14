@@ -1,4 +1,4 @@
--- Комбинации клавиш
+-- КомбинациИ клавиш
 
 
 --- Базовые
@@ -10,12 +10,32 @@
 ---- alt+` - открыть терминал в новой вкладке + сразу переходит в режим терминала (выход из режима терминала - ESC)
 ---- alt+3 - перейти на предыдущую вкладку (можно использовать для циклического переключения между вкладками)
 ---- alt+4 - перейти на следующую вкладку (можно использовать для циклического переключения между вкладками)
+---- :q - закрыть текущую вкладку (закроется если нет изменений)
+---- :wq - закрыть вкладку с записью изменений
+---- :q! - закрыть вкладку без записи изменений
+--- Работа с деревом директорий
+---- alt + ] - выделенную директорию сделать корнем 
 --- Работа с текстом
 ---- tab/shift+tab - сдвиг выделенного текста в визуальном режиме на 1 tab вправо/влево
 ---- y - копировать выделенный текст
 ---- yy - копировать выделенную строку 
 ---- d - вырезать выделенный текст
 ---- dd - вырезать выделенную строку
+---- p - вставить текст перед курсором
+---- o/O - новая строка под/над курсором
+---- x - удалить символ под курсором
+---- r - заменить символ под курсором
+---- ~ - изменить регистр символа
+--- Поиск и замена
+---- /текст - поиск вперед
+---- ?текст - поиск назад
+---- n/N - следующий/предыдущий результат поиска
+---- :%s/старое/новое/g - заменить все вхождения в файле
+---- :%s/старое/новое/gc - заменить все вхождения в файле с подтверждением
+--- Перемещение по файлу
+---- w/b - перемещение на слово вперед/назад
+---- 0/$ - перемещение к первому/последнему символу строки
+---- gg/G - перемещение в начало/конец файла
 
 
 -- Базовые настройки
@@ -42,16 +62,16 @@ vim.opt.smarttab = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 -- alt+w - циклическое переключение между окнами
-vim.keymap.set("n", "<A-w>", "<C-w>w", { silent = true })
+vim.keymap.set("n", "<A-w>", "<C-w>w", { noremap = true, silent = true })
 -- Tab/Shift-Tab для сдвига текста в визуальном режиме 
 vim.keymap.set("v", "<Tab>", ">gv", { noremap = true, silent = true })
 vim.keymap.set("v", "<S-Tab>", "<gv", { noremap = true, silent = true })
 -- alt+z - vim.opt.wrap = false/true
-vim.keymap.set('n', '<A-z>', function() vim.opt.wrap = not vim.opt.wrap:get() end, { silent = true })
+vim.keymap.set('n', '<A-z>', function() vim.opt.wrap = not vim.opt.wrap:get() end, { noremap = true, silent = true })
 -- alt+` - открыть терминал в новой вкладке + сразу заходит в режим терминала
 vim.keymap.set('n', '<A-`>', ':tabnew | terminal<CR>i', { noremap = true, silent = true })
 -- Выход из режима терминала используя esc
-vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { noremap = true })
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = true })
 -- alt+3 - Перейти на пред. вкладку
 vim.keymap.set('n', '<A-3>', ':tabprevious<CR>', { noremap = true, silent = true })
 -- alt+4 - Перейти на след. вкладку
@@ -97,11 +117,13 @@ require("lazy").setup({
                 end,
             })
             -- alt+e - открыть/закрыть меню директорий
-            vim.keymap.set("n", "<A-e>", ":NvimTreeToggle<CR>", { silent = true })
+            vim.keymap.set("n", "<A-e>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
             -- alt+1 - уменьшить ширину меню директорий на 5 символов
-            vim.keymap.set("n", "<A-1>", ":NvimTreeResize -5<CR>", { silent = true })
+            vim.keymap.set("n", "<A-1>", ":NvimTreeResize -5<CR>", { noremap = true, silent = true })
             -- alt+2 - увеличить ширину меню директорий на 5 символов
-            vim.keymap.set("n", "<A-2>", ":NvimTreeResize +5<CR>", { silent = true })
+            vim.keymap.set("n", "<A-2>", ":NvimTreeResize +5<CR>", { noremap = true, silent = true })
+            -- alt+] - сделать выбранную директорию корневой
+            vim.keymap.set("n", "<A-]>", nvt_api.tree.change_root_to_node, { noremap = true, silent = true })
         end
     },
     -- Цветовая тема
