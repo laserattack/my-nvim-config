@@ -4,7 +4,11 @@ return {
     "nvim-tree/nvim-tree.lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-        require("nvim-tree").setup()
+        require("nvim-tree").setup({
+            filters = {
+                git_ignored = false,
+            }
+        })
         local nvt_api = require("nvim-tree.api")
         -- Открытие дерева директорий при запуске nvim, при открытии новой вкладки
         local function open_nvim_tree()
