@@ -19,8 +19,10 @@ local plugins = {
     require("plugins/nvim-tree"),
     -- Цветовая тема
     require("plugins/color-scheme"),
-    -- Treesitter
-    require("plugins/treesitter"),
+    -- Treesitter - умная подсветка для выбранных языков (с учетом AST)
+    require("plugins/tree-sitter"),
+    -- Auto complete - предлагает варианты дополнения
+    require("plugins/cmp"),
 }
 
 require("lazy").setup(plugins)
