@@ -1,4 +1,5 @@
 -- Настройки цветовой темы
+
 return  { 
     "rebelot/kanagawa.nvim",
     config = function() 
