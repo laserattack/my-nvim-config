@@ -117,13 +117,15 @@ require("lazy").setup({
         config = function()
             require("nvim-tree").setup()
             local nvt_api = require("nvim-tree.api")
-            -- Открытие дерева директорий при запуске
-            vim.api.nvim_create_autocmd("VimEnter", {
-                callback = function ()
+            -- Открытие дерева директорий при запуске nvim, при открытии новой вкладки
+            local function open_nvim_tree()
+                if not nvt_api.tree.is_visible() then
                     nvt_api.tree.open()
-                    vim.cmd("wincmd p")
+                    vim.cmd("wincmd p")  -- Возвращаем фокус в предыдущее окно
                 end
-            })
+            end
+            vim.api.nvim_create_autocmd("TabNew", { callback = open_nvim_tree })
+            vim.api.nvim_create_autocmd("VimEnter", { callback = open_nvim_tree })
             -- При закрытии файла дерево директорий также закрывается
             vim.api.nvim_create_autocmd("QuitPre", {
                 callback = function()
