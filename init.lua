@@ -60,8 +60,8 @@
 ---- gg/G - перемещение в начало/конец файла
 
 -- Подгружает настройки nvim`a
-require("lua/settings")
+require("settings")
 -- Подгружает бинды
-require("lua/keymap")
+require("keymap")
 -- Подгружает плагины и их настройки
-require("lua/plugins/init")
+require("plugins/init")

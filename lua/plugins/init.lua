@@ -16,9 +16,11 @@ vim.opt.rtp:prepend(lazypath)
 -- Подключаемые плагины
 local plugins = {
     -- Дерево директорий
-    require("lua/plugins/nvim-tree"),
+    require("plugins/nvim-tree"),
     -- Цветовая тема
-    require("lua/plugins/color-scheme"),
+    require("plugins/color-scheme"),
+    --
+    require("plugins/treesitter"),
 }
 
 require("lazy").setup(plugins)
