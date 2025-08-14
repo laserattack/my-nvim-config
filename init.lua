@@ -1,6 +1,13 @@
+-- Зависимости
+--- Необходимо поставить вручную
+---- Шрифт для терминала JetBrainsMono Nerd Font Regular (https://www.nerdfonts.com/font-downloads)
+--- Ставятся автоматически если всё хорошо с репозиториями и есть доступ к GitHub 
+---- https://github.com/folke/lazy.nvim - менеджер плагинов
+---- https://github.com/nvim-tree/nvim-tree.lua - плагин для отображения дерева директорий
+---- https://github.com/nvim-tree/nvim-web-devicons - плагин для красивых иконок в дереве директорий
+---- https://github.com/rebelot/kanagawa.nvim - цветовая тема
+
 -- Комбинации клавиш
-
-
 --- Базовые
 ---- alt+e - открыть/закрыть меню дерева директорий
 ---- alt+1 - уменьшить ширину меню дерева директорий на 5 символов  
