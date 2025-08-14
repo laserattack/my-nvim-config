@@ -1,11 +1,15 @@
 -- Настройка treesitter`a
 
-return  { 
+return {
     "nvim-treesitter/nvim-treesitter",
-    ensure_installed = { "c", "lua", "go" },
-    sync_install = false,
-    auto_install = true,
-    highlight = {
-        enable = true,
-    },
+    config = function()
+        require("nvim-treesitter.configs").setup({
+            ensure_installed = { "c", "lua", "zig" },
+            sync_install = false,
+            auto_install = false,
+            highlight = {
+                enable = true,
+            },
+        })
+    end
 }

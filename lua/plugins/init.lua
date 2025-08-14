@@ -19,7 +19,7 @@ local plugins = {
     require("plugins/nvim-tree"),
     -- Цветовая тема
     require("plugins/color-scheme"),
-    --
+    -- Treesitter
     require("plugins/treesitter"),
 }
 
