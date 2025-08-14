@@ -6,7 +6,7 @@ sudo apt install neovim
 
 ## Настройка NeoVim с 0
 
-- В `~/.config/nvim/` скопировать всё из этого репозиторий
+- В `~/.config/nvim/` скопировать всё из этого репозитория
 - [Отсюда](https://www.nerdfonts.com/font-downloads) скачать шрифт `JetBrainsMono Nerd Font`, разархивировать в папку `~/.local/share/fonts`
 - Обновить кэш шрифтов `fc-cache -fv`
 - В настройках терминала выбрать `JetBrainsMono Nerd Font Regular`
