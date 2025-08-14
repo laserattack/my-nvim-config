@@ -7,6 +7,11 @@
 ---- https://github.com/nvim-tree/nvim-web-devicons - плагин для красивых иконок в дереве директорий
 ---- https://github.com/rebelot/kanagawa.nvim - плагин для установки цветовой темы
 ---- https://github.com/nvim-treesitter/nvim-treesitter - плагин для умной подстветки ЯП
+---- https://github.com/hrsh7th/nvim-cmp - плагин для вариантов автодополнения
+---- https://github.com/hrsh7th/cmp-buffer - автодополнение из текущего буффера
+---- https://github.com/hrsh7th/cmp-path - автодополнение из файловой системы 
+---- https://github.com/hrsh7th/cmp-cmdline - автодополнение из командной строки
+
 
 -- Комбинации клавиш
 --- Базовые
