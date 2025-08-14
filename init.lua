@@ -53,8 +53,6 @@
 
 
 -- Базовые настройки
-
-
 -- Для нормального взамодействия с системным буфером
 vim.opt.clipboard = "unnamedplus"
 -- Отключение swap файлов
@@ -93,8 +91,6 @@ vim.keymap.set('n', '<A-4>', ':tabnext<CR>', { noremap = true, silent = true })
 
 
 -- Настройки плагинов
-
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
