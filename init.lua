@@ -5,6 +5,8 @@
 
 -- Для нормального взамодействия с системным буфером
 vim.opt.clipboard = "unnamedplus"
+-- Отключение swap файлов
+vim.opt.swapfile = false
 -- Относительные номера строк
 vim.opt.number = true
 vim.opt.relativenumber = true
