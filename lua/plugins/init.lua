@@ -23,6 +23,8 @@ local plugins = {
     require("plugins/tree-sitter"),
     -- Auto complete - предлагает варианты дополнения
     require("plugins/cmp"),
+    --
+    require("plugins/lsp"),
 }
 
 require("lazy").setup(plugins)

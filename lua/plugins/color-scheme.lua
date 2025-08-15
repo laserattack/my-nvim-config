@@ -1,8 +1,8 @@
 -- Настройки цветовой темы
 
-return  { 
+return  {
     "rebelot/kanagawa.nvim",
-    config = function() 
+    config = function()
         vim.cmd("colorscheme kanagawa-wave")
         -- Фон у колонки с номерами строк выключаю
         vim.cmd([[

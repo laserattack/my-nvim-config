@@ -6,14 +6,20 @@ return {
         'hrsh7th/cmp-buffer',
         'hrsh7th/cmp-path',
         'hrsh7th/cmp-cmdline',
+        'hrsh7th/cmp-nvim-lsp',
     },
-    config = function() 
+    config = function()
         local cmp = require 'cmp'
         cmp.setup({
             -- Настройка красивого стиля окна с вариантами дополнения
-            window = {completion = cmp.config.window.bordered()},
+            window = {
+                completion = cmp.config.window.bordered(),
+                documentation = cmp.config.window.bordered()
+            },
             -- Маппинги
             mapping = cmp.mapping.preset.insert({
+                ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+                ['<C-f>'] = cmp.mapping.scroll_docs(4),
                 -- Вызов автодополнения
                 ['<C-Space>'] = cmp.mapping.complete(),
                 -- Отмена автодополнения
@@ -33,7 +39,7 @@ return {
                 )
             }),
             -- Источник автодополнения - текущий буффер
-            sources = cmp.config.sources({}, {{name = 'buffer'}})
+            sources = cmp.config.sources({{name = "nvim_lsp"}}, {{name = 'buffer'}})
         })
         -- Автодополнение для поиска (/ и ?)
         cmp.setup.cmdline({'/', '?'}, {
