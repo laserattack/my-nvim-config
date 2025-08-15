@@ -13,6 +13,9 @@ local ls_settings = {
             },
         }
     },
+    zls = {
+        cmd = { vim.fn.expand('~/.config/nvim/lsp/zls/zls') },
+    },
 }
 
 -- Общие настройки
