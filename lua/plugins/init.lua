@@ -12,7 +12,6 @@ if not vim.loop.fs_stat(lazypath) then
     })
 end
 vim.opt.rtp:prepend(lazypath)
-
 -- Подключаемые плагины
 local plugins = {
     -- Дерево директорий
@@ -23,7 +22,7 @@ local plugins = {
     require("plugins/tree-sitter"),
     -- Auto complete - предлагает варианты дополнения
     require("plugins/cmp"),
-    --
+    -- lsp
     require("plugins/lsp"),
 }
 
