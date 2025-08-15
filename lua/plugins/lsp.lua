@@ -1,6 +1,5 @@
 -- Настройки LSP серверов
 
--- Настройки LSP-серверов
 local ls_settings = {
     -- lsp сервер для Lua
     lua_ls = {
